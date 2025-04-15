@@ -7,6 +7,7 @@ import RulesBox from './components/RulesBox.vue'
 import ChartPanel from './components/ChartPanel.vue'
 import ControlPanel from './components/ControlPanel.vue'
 import SummaryPanel from './components/SummaryPanel.vue'
+import FooterSection from './components/FooterSection.vue'
 
 onMounted(() => {
   const store = useSimulationStore()
@@ -15,7 +16,6 @@ onMounted(() => {
   }
 })
 </script>
-
 
 <template>
   <OrientationTip />
@@ -27,19 +27,9 @@ onMounted(() => {
   <ChartPanel />
   <ControlPanel />
   <SummaryPanel />
+  <FooterSection />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+/* 清除默认 vite 示例 logo 样式 */
 </style>
