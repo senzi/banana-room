@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const showRules = ref(false)
+const showRules = ref(true)
 </script>
 
 <style scoped>
