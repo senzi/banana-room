@@ -56,7 +56,7 @@ export const useSimulationStore = defineStore('simulation', {
     _highlightMap: []
   }),
   actions: {
-    initSimulation(frameSize = 100) {
+    initSimulation(frameSize = 100, userIndex: number | null = this.userMonkeyIndex) {
       const { history, highlightMap } = simulate()
       this.history = history
       this._highlightMap = highlightMap
@@ -66,7 +66,7 @@ export const useSimulationStore = defineStore('simulation', {
       this.highlight = []
       this.apes = Array(20).fill(20)
       this.running = false
-      this.userMonkeyIndex = null
+      this.userMonkeyIndex = userIndex // ✅ 保留传入或已有的编号，不清空
     },
 
     playStep() {
@@ -89,7 +89,7 @@ export const useSimulationStore = defineStore('simulation', {
     },
 
     reset() {
-      this.initSimulation(this.frameSize)
+      this.initSimulation(this.frameSize) // ✅ 自动带入当前编号
     },
 
     setSpeed(val: number) {
@@ -109,4 +109,3 @@ export const useSimulationStore = defineStore('simulation', {
     }
   }
 })
-

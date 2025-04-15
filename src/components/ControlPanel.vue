@@ -36,7 +36,8 @@ let timer: ReturnType<typeof setInterval> | null = null
 
 function confirm() {
   const idx = Math.max(1, Math.min(20, inputIndex.value))
-  store.userMonkeyIndex = idx - 1 // 存储为 0-based
+  store.userMonkeyIndex = idx - 1
+  console.log('[set userMonkeyIndex]', store.userMonkeyIndex)
   start()
   showDialog.value = false
 }
@@ -79,6 +80,7 @@ onUnmounted(() => {
   text-align: center;
   margin-top: 16px;
 }
+
 button {
   font-size: 16px;
   padding: 10px 24px;
@@ -89,6 +91,7 @@ button {
   cursor: pointer;
   transition: background 0.2s ease;
 }
+
 button:hover {
   background: #407cc9;
 }
@@ -142,8 +145,8 @@ button:hover {
   background: #e53935;
   color: white;
 }
+
 .button-row .angry:hover {
   background: #c62828;
 }
-
 </style>

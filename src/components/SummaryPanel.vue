@@ -9,21 +9,20 @@
     </p>
 
     <!-- 👇 用户选择了自己是某只猴子时，展示个性化结果 -->
-    <p class="summary-personal" v-if="userMonkeyIndex !== null && personalBanana !== null">
+    <p class="summary-personal" v-if="store.userMonkeyIndex !== null && personalBanana !== null">
       <template v-if="personalBanana === 0">
-        笑死，{{ userMonkeyIndex + 1 }}号猴子，你怎么没有香蕉了。
+        笑死，{{ store.userMonkeyIndex + 1 }}号猴子，你怎么没有香蕉了。
       </template>
       <template v-else-if="personalBanana < 20">
-        你，{{ userMonkeyIndex + 1 }}号猴子，只有 {{ personalBanana }} 根香蕉。
+        你，{{ store.userMonkeyIndex + 1 }}号猴子，只有 {{ personalBanana }} 根香蕉。
       </template>
       <template v-else-if="personalBanana === 20">
-        你，{{ userMonkeyIndex + 1 }}号猴子，怎么还是 20 根香蕉。
+        你，{{ store.userMonkeyIndex + 1 }}号猴子，怎么还是 20 根香蕉。
       </template>
       <template v-else>
-        你，{{ userMonkeyIndex + 1 }}号猴子，居然有 {{ personalBanana }} 根香蕉。
+        你，{{ store.userMonkeyIndex + 1 }}号猴子，居然有 {{ personalBanana }} 根香蕉。
       </template>
     </p>
-
   </div>
 </template>
 
@@ -38,10 +37,12 @@ const last = computed(() => store.history.at(-1) || [])
 const maxBanana = computed(() => Math.max(...last.value))
 const minBanana = computed(() => Math.min(...last.value))
 
-const userMonkeyIndex = computed(() => store.userMonkeyIndex)
-const personalBanana = computed(() =>
-  userMonkeyIndex.value !== null ? last.value[userMonkeyIndex.value] : null
-)
+const personalBanana = computed(() => {
+  const index = store.userMonkeyIndex
+  if (index === null) return null
+  return store.apes[index] ?? null
+})
+
 </script>
 
 <style scoped>
