@@ -49,19 +49,19 @@ const personalBanana = computed(() => {
 .summary-panel {
   background: #f6f6f9;
   border-radius: 12px;
-  padding: 24px 16px;
+  padding: 18px 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   color: #444;
   max-width: 420px;
-  margin: 24px auto 0 auto;
+  margin: 16px auto 0 auto;
   text-align: center;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .summary-note {
   color: #555;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .summary-personal {

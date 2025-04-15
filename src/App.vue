@@ -31,24 +31,41 @@ onMounted(() => {
 </script>
 
 <template>
-  <OrientationTip />
-  <TitleSection>
-    <template #rules>
-      <RulesBox />
-    </template>
-  </TitleSection>
+  <div class="page-container">
+    <div class="main-content">
+      <OrientationTip />
+      <TitleSection>
+        <template #rules>
+          <RulesBox />
+        </template>
+      </TitleSection>
 
-  <!-- ✅ 用于横屏滚动对齐目标 -->
-  <div ref="chartSection" class="scroll-anchor">
-    <ChartPanel />
-    <ControlPanel />
+      <div ref="chartSection" class="scroll-anchor">
+        <ChartPanel />
+        <ControlPanel />
+      </div>
+
+      <SummaryPanel />
+    </div>
+
+    <!-- 页脚放在容器最底下 -->
+    <FooterSection />
   </div>
-
-  <SummaryPanel />
-  <FooterSection />
 </template>
 
+
 <style scoped>
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 撑满一整屏 */
+}
+
+.main-content {
+  flex: 1; /* 中间的内容自动撑开 */
+}
+
 .scroll-anchor {
   scroll-margin-top: 48px;
 }

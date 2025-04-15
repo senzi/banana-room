@@ -19,7 +19,7 @@
 .rules-box {
   background: #f6f6f9;
   border-radius: 12px;
-  padding: 18px 16px;
+  padding: 14px 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   color: #444;
   font-size: 1.05em;
@@ -30,13 +30,13 @@
 h2 {
   font-size: 1.1em;
   color: #b47d00;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
 }
 ul {
   padding-left: 1.2em;
   margin: 0;
 }
 li {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.25em;
 }
 </style>

@@ -115,24 +115,24 @@ watch(() => [store.apes, store.highlight], () => {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
 }
 
 .chart-box {
   width: 100%;
-  height: 230px;
+  height: 220px;
 }
 
 
 .day-indicator {
-  margin-top: 8px;
+  margin-top: 6px;
   text-align: center;
   font-size: 14px;
   color: #666;
 }
 
 .legend {
-  margin: 8px auto;
+  margin: 6px auto;
   font-size: 13px;
   color: #666;
   text-align: center;

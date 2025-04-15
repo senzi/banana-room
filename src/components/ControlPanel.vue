@@ -78,7 +78,7 @@ onUnmounted(() => {
 <style scoped>
 .control-panel {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 button {

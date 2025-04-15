@@ -20,13 +20,13 @@ const showRules = ref(true)
 
 <style scoped>
 .title-section {
-  padding: 24px 0 8px 0;
+  padding: 16px 0 4px 0;
   text-align: center;
 }
 h1 {
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
 }
 .expand-btn {
   background: none;
@@ -37,7 +37,7 @@ h1 {
   margin-bottom: 8px;
 }
 .rules-box-wrapper {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.3s;

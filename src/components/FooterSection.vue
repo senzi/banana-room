@@ -18,7 +18,8 @@
         >
           GitHub 源码
         </a>
-        · 协议 MIT
+        · 协议 MIT<br />
+        banana.closeai.moe
       </div>
     </footer>
   </template>
@@ -28,9 +29,13 @@
     text-align: center;
     font-size: 13px;
     color: #999;
-    margin-top: 40px;
-    padding: 24px 0;
+    margin-top: 20px;
+    padding: 16px 0;
     border-top: 1px dashed #eee;
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 10;
   }
   
   .site-footer a {
@@ -42,4 +47,3 @@
     text-decoration: underline;
   }
   </style>
-  
