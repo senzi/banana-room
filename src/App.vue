@@ -1,17 +1,32 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { onMounted } from 'vue'
+import { useSimulationStore } from './store/simulation'
+import OrientationTip from './components/OrientationTip.vue'
+import TitleSection from './components/TitleSection.vue'
+import RulesBox from './components/RulesBox.vue'
+import ChartPanel from './components/ChartPanel.vue'
+import ControlPanel from './components/ControlPanel.vue'
+import SummaryPanel from './components/SummaryPanel.vue'
+
+onMounted(() => {
+  const store = useSimulationStore()
+  if (!store.history.length) {
+    store.initSimulation()
+  }
+})
 </script>
 
+
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <OrientationTip />
+  <TitleSection>
+    <template #rules>
+      <RulesBox />
+    </template>
+  </TitleSection>
+  <ChartPanel />
+  <ControlPanel />
+  <SummaryPanel />
 </template>
 
 <style scoped>
