@@ -14,6 +14,7 @@ export interface SimulationState {
   totalFrames: number;          // 总帧数
   running: boolean;
   speed: number;                // 播放速度 ms/帧
+  userMonkeyIndex: number | null; // 用户选择的猴子编号（0-based），null 表示未参与
   _highlightMap?: Highlight[][];// 私有记录：每天交互
 }
 
@@ -51,6 +52,7 @@ export const useSimulationStore = defineStore('simulation', {
     totalFrames: 0,
     running: false,
     speed: 500,
+    userMonkeyIndex: null,
     _highlightMap: []
   }),
   actions: {
@@ -64,6 +66,7 @@ export const useSimulationStore = defineStore('simulation', {
       this.highlight = []
       this.apes = Array(20).fill(20)
       this.running = false
+      this.userMonkeyIndex = null
     },
 
     playStep() {
